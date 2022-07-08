@@ -52,7 +52,11 @@ export const loginUser = createAsyncThunk(
 export const logout = createAsyncThunk(
     "/logout",
    async (thunkAPI) => {
-    
+    try{
+        
+    } catch(e){
+        console.log(e);
+    }
    }
 );
 
@@ -81,11 +85,13 @@ export const UserSlice = createSlice({
         });
 
         checkState.addCase(loginUser.rejected, (state, action) => {
+            console.log("we lost the state");
             state.error = true;
             state.loading = false;
         });
 
         checkState.addCase(logout.fulfilled, (state, action) => {
+            console.log("we logged out");
             state.user = undefined;
             state.isLoggedIn = false;
         });

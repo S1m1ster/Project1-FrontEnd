@@ -10,20 +10,20 @@ export const LoginPage: React.FC = () => {
     const navigateTo = useNavigate();
   
     useEffect(() => {
-      if (currentUserState.isLoggedIn != false) {
-        if(currentUserState.user?.role == 2){
+      if (currentUserState.isLoggedIn !== false) {
+        if(currentUserState.user?.role === 2){
           console.log("we logged in manager");
           navigateTo('/managerhomepage')
         }
         else{
           console.log("we logged in employee");
-          navigateTo('/emplyeehomepage');
+          navigateTo('/employeehomepage');
         }
       }
       else{
         console.log("credentials failed");
       }
-    }, [currentUserState.isLoggedIn, currentUserState.user?.role]);
+    }, [currentUserState.isLoggedIn, currentUserState.user?.role, navigateTo]);
   
   
     return (

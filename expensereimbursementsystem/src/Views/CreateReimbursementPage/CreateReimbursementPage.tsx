@@ -3,25 +3,25 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../Store';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
-import { EmployeeHomePageForm } from "../../Components/HomePageForms/EmployeeHomePageForm";
+import { CreateReimbursementForm } from "../../Components/CreateTicketForm/CreateTicketForm";
 import { useEffect } from "react";
 
-export const EmployeeHomePage: React.FC = () => {
+export const CreateReimbursementPage: React.FC = () => {
     const employeeInfo = useSelector((state: RootState) => state.user);
     const navigateTo = useNavigate();
     
+    console.log("create page user status: " + employeeInfo.isLoggedIn);
     useEffect(() => {
         if(!employeeInfo.isLoggedIn){
             navigateTo('/login');
         }
-    }, [employeeInfo.isLoggedIn]);
+    }, [employeeInfo.isLoggedIn, navigateTo]);
+    
 
     return(
-        <div className="employee-homepage">
+        <div className="create-reimbursement-homepage">
             <Navbar/>
-            <h1>Employee Homepage</h1>
-            <EmployeeHomePageForm/>
-            
+            <CreateReimbursementForm/>
         </div>
     )
 }
