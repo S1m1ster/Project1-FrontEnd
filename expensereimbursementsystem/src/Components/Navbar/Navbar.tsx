@@ -4,18 +4,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch } from "../../Store";
 import { RootState } from '../../Store';
 import {logout} from '../../Slices/UserSlice';
-import { isCallOrNewExpression } from "typescript";
 
 export const Navbar: React.FC = () => {
     const role = useSelector((state: RootState) => state.user.user?.role);
     const dispatch :AppDispatch = useDispatch();
 
     const handleLogout = () => {
+        console.log("logout was triggered");
         dispatch(logout());
     }
 
     const isManager=() => {
-        if(role ==2){
+        if(role === 2){
             return true;
         }
         else{

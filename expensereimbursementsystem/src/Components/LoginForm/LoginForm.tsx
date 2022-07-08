@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../Store';
-import { loginUser, toggleError } from '../../Slices/UserSlice';
+import { loginUser } from '../../Slices/UserSlice';
 
 export const LoginForm: React.FC = () => {
     const [email, setEmail] = useState<string>("");
@@ -25,7 +25,7 @@ export const LoginForm: React.FC = () => {
     return(
         <div className='login-form'>
             <div id='header-container'>
-                <h1 id='header'>"Login to Expense Reimbursement System"</h1>
+                <h1 id='header'>Login to Expense Reimbursement System</h1>
             </div>
 
             <form className='form'>
