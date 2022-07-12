@@ -4,6 +4,14 @@ import { useNavigate } from 'react-router-dom';
 export const EmployeeHomePageForm: React.FC = () => {
     const navigateTo = useNavigate();
 
+    const handlegoToViewAccount = (eventL:React.MouseEvent<HTMLButtonElement>) => {
+        navigateTo('/viewAccount');
+    }
+
+    const handlegoToUpdateAccount = (event:React.MouseEvent<HTMLButtonElement>) => {
+        navigateTo('/updateAccount');
+    }
+
     const handlegoToCreateTicket = (event:React.MouseEvent<HTMLButtonElement>) => {
         navigateTo('/createTicket');
         
@@ -13,11 +21,11 @@ export const EmployeeHomePageForm: React.FC = () => {
         <div className="employee-container">
                 <ul className="employee-btns">
                     <li>
-                        <button className="employee-btn">View Account</button>
+                        <button className="employee-btn" onClick={handlegoToViewAccount}>View Account</button>
                     </li>
                     
                     <li>
-                        <button className="employee-btn">Edit Account</button>
+                        <button className="employee-btn" onClick={handlegoToUpdateAccount}>Edit Account</button>
                     </li>
 
                     <li>

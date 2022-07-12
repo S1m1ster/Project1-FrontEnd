@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../Store';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
-import { EmployeeHomePageForm } from "../../Components/HomePageForms/EmployeeHomePageForm";
 import { useEffect } from "react";
 
-export const EmployeeHomePage: React.FC = () => {
+export const ViewAccountPage: React.FC = () => {
     const employeeInfo = useSelector((state: RootState) => state.user);
-    const navigateTo = useNavigate();
     
+    const navigateTo = useNavigate();
+
     useEffect(() => {
         if(!employeeInfo.isLoggedIn){
             navigateTo('/login');
@@ -19,8 +19,13 @@ export const EmployeeHomePage: React.FC = () => {
     return(
         <div className="employee-homepage">
             <Navbar/>
-            <h1>{useSelector((state: RootState) => state.user.user?.username)} Homepage</h1>
-            <EmployeeHomePageForm/>
+            <h1>My Profile</h1>
+            <div className="user-info-container">
+                <label className="user-firstname">First Name: {employeeInfo.user?.firstName}</label>
+                <label className="user-lastname">Last Name: {employeeInfo.user?.lastName}</label>
+                <label className="user-username">Username: {employeeInfo.user?.username}</label>
+                <label className="user-email">Email: {employeeInfo.user?.email}</label>
+            </div>
             
         </div>
     )

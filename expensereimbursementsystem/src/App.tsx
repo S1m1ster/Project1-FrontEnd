@@ -4,6 +4,8 @@ import { EmployeeHomePage } from './Views/HomePage/EmployeeHomePage';
 import { ManagerHomePage } from './Views/HomePage/ManagerHomePage';
 import { CreateReimbursementPage } from './Views/CreateReimbursementPage/CreateReimbursementPage';
 import { LoginPage } from './Views/LoginPage/LoginPage';
+import { ViewAccountPage } from './Views/ViewAccountPage/ViewAccountPage';
+import { UpdateAccountPage} from './Views/UpdateAccountPage/UpdateAccountPage';
 function App() {
   return (
     <HashRouter>
@@ -13,6 +15,8 @@ function App() {
           <Route path="/managerhomepage" element={<ManagerHomePage />} />
           <Route path="/employeehomepage" element={<EmployeeHomePage />} />
           <Route path="/createTicket" element={<CreateReimbursementPage />} />
+          <Route path="/viewAccount" element={<ViewAccountPage/>}/>
+          <Route path="/updateAccount" element={<UpdateAccountPage/>}/>
       </Routes>
     </HashRouter>
   );
