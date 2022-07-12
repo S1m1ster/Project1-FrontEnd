@@ -8,5 +8,6 @@ export interface IUser{
     lastName: string,
     email: string,
     role?: number,
+    roleType?: string,
     reimbursement?: IReimbrusement[]
 }

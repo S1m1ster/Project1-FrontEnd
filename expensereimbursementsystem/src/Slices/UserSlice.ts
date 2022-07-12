@@ -32,7 +32,6 @@ export const loginUser = createAsyncThunk(
             //axios.defaults.withCredentials = true;
             const res = await axios.post('http://localhost:8000/login', credentials);
             userData = res.data;
-            console.log(res.data)
             return {
                 userId: res.data.userId,
                 username: res.data.username,
@@ -40,7 +39,8 @@ export const loginUser = createAsyncThunk(
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,
                 email: res.data.email,
-                role: res.data.userPair_role.roleId
+                role: res.data.userPair_role.roleId,
+                roleType: res.data.userPair_role.roleType
             }
         }
         catch (e) {
@@ -48,6 +48,39 @@ export const loginUser = createAsyncThunk(
         }
     }
 );
+
+type UpdateAccount = {
+    userId?: number,
+    username?: string,
+    password?: string,
+    firstName?: string,
+    lastName?: string,
+    email?: string,
+}
+
+export const updateUser = createAsyncThunk(
+    'update',
+   async (credentials: UpdateAccount, thunkAPI) => {
+    try{
+        const res = await axios.patch('http://localhost:8000/updateAccount', credentials);
+        return{
+            userId: res.data.userId,
+            username: res.data.username,
+            password: res.data.password,
+            firstName: res.data.firstName,
+            lastName: res.data.lastName,
+            email: res.data.email
+        };
+    }
+    catch(e){
+        console.log(e);
+        return thunkAPI.rejectWithValue('updating user failed');
+    }
+    
+   }
+);
+
+
 
 export const logout = createAsyncThunk(
     "/logout",
@@ -85,6 +118,23 @@ export const UserSlice = createSlice({
         });
 
         checkState.addCase(loginUser.rejected, (state, action) => {
+            console.log("we lost the state");
+            state.error = true;
+            state.loading = false;
+        });
+
+        checkState.addCase(updateUser.pending, (state, action) => {
+            state.loading = true;
+        });
+
+        checkState.addCase(updateUser.fulfilled, (state, action) => {
+            state.user = action.payload;
+            state.error = false;
+            state.loading = false;
+            state.isLoggedIn = true;
+        });
+
+        checkState.addCase(updateUser.rejected, (state, action) => {
             console.log("we lost the state");
             state.error = true;
             state.loading = false;

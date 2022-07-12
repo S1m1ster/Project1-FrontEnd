@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../Store';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
-import { EmployeeHomePageForm } from "../../Components/HomePageForms/EmployeeHomePageForm";
+import { UpdateAccountForm } from "../../Components/UpdateAccountForm/UpdateAccountForm";
 import { useEffect } from "react";
 
-export const EmployeeHomePage: React.FC = () => {
+export const UpdateAccountPage: React.FC = () => {
     const employeeInfo = useSelector((state: RootState) => state.user);
     const navigateTo = useNavigate();
     
@@ -19,8 +19,8 @@ export const EmployeeHomePage: React.FC = () => {
     return(
         <div className="employee-homepage">
             <Navbar/>
-            <h1>{useSelector((state: RootState) => state.user.user?.username)} Homepage</h1>
-            <EmployeeHomePageForm/>
+            <h1>Update Account</h1>
+            <UpdateAccountForm/>
             
         </div>
     )
