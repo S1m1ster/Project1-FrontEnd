@@ -29,9 +29,9 @@ export const loginUser = createAsyncThunk(
     'login',
     async (credentials: Login, thunkAPI) => {
         try {
-            //axios.defaults.withCredentials = true;
             const res = await axios.post('http://localhost:8000/login', credentials);
             userData = res.data;
+            console.log(res.data);
             return {
                 userId: res.data.userId,
                 username: res.data.username,
@@ -40,7 +40,7 @@ export const loginUser = createAsyncThunk(
                 lastName: res.data.lastName,
                 email: res.data.email,
                 role: res.data.userPair_role.roleId,
-                roleType: res.data.userPair_role.roleType
+                roleType: res.data.userPair_role.roleType,
             }
         }
         catch (e) {

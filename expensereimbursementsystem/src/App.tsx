@@ -6,6 +6,8 @@ import { CreateReimbursementPage } from './Views/CreateReimbursementPage/CreateR
 import { LoginPage } from './Views/LoginPage/LoginPage';
 import { ViewAccountPage } from './Views/ViewAccountPage/ViewAccountPage';
 import { UpdateAccountPage} from './Views/UpdateAccountPage/UpdateAccountPage';
+import { ViewPendingReimbursementPage } from './Views/ViewReimbursementPage/ViewPendingReimbursementPage'
+import { ViewResolvedReimbursementPage } from './Views/ViewReimbursementPage/ViewResolvedReimbursementPage';
 function App() {
   return (
     <HashRouter>
@@ -16,7 +18,9 @@ function App() {
           <Route path="/employeehomepage" element={<EmployeeHomePage />} />
           <Route path="/createTicket" element={<CreateReimbursementPage />} />
           <Route path="/viewAccount" element={<ViewAccountPage/>}/>
-          <Route path="/updateAccount" element={<UpdateAccountPage/>}/>
+          <Route path="/updateAccount" element={<UpdateAccountPage/>}/>ViewResolvedReimbursementPage
+          <Route path="/viewPending" element={<ViewPendingReimbursementPage/>}/>
+          <Route path="/viewResolved" element={<ViewResolvedReimbursementPage/>}/>
       </Routes>
     </HashRouter>
   );
