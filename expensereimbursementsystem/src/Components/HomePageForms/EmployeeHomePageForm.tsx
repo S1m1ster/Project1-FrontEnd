@@ -16,6 +16,16 @@ export const EmployeeHomePageForm: React.FC = () => {
         navigateTo('/createTicket');
         
     }
+    
+    const handlegoToPending = (event:React.MouseEvent<HTMLButtonElement>) => {
+        navigateTo('/viewPending');
+        
+    }
+
+    const handlegoToResolved = (event:React.MouseEvent<HTMLButtonElement>) => {
+        navigateTo('/viewResolved');
+        
+    }
 
     return(
         <div className="employee-container">
@@ -33,11 +43,11 @@ export const EmployeeHomePageForm: React.FC = () => {
                     </li>
 
                     <li>
-                        <button className="employee-btn">View my Pending Reimbursement</button>
+                        <button className="employee-btn" onClick={handlegoToPending}>View my Pending Reimbursement</button>
                     </li>
 
                     <li>
-                        <button className="employee-btn">View my Resolved Reimbursement</button>
+                        <button className="employee-btn" onClick={handlegoToResolved}>View my Resolved Reimbursement</button>
                     </li>
                 </ul>
      </div>

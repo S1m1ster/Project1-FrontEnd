@@ -1,13 +1,16 @@
+import { IReimbrusementType } from "./IReimbursementType";
+import { IReimbrusementStatus } from "./IReimbursemnetStatus";
 import { IUser } from "./IUser";
 
 export interface IReimbrusement{
     reimbursementId?: number,
-    employeeId: number,
+    userPair: IUser,
     amount: number,
     description: string,
-    submittedDate: Date,
-    status: number,
-    type: number,
-    managerId?: number,
-    resolvedDate?: Date
+    submittedDate: string,
+    reimbursement_status?: IReimbrusementStatus
+    reimbursement_type?: IReimbrusementType,
+    resolvedDate?:string,
+    userResolver_ticket?: IUser
+    
 }
