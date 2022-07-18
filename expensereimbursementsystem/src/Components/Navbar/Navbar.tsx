@@ -6,7 +6,7 @@ import { RootState } from '../../Store';
 import {logout} from '../../Slices/UserSlice';
 
 export const Navbar: React.FC = () => {
-    const role = useSelector((state: RootState) => state.user.user?.role);
+    const role = useSelector((state: RootState) => state.user.user?.userPair_role?.roleId);
     const dispatch :AppDispatch = useDispatch();
 
     const handleLogout = () => {

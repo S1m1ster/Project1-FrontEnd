@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const CreateReimbursementForm: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
-    const role = useSelector((state: RootState) => state.user.user?.role!);
+    const role = useSelector((state: RootState) => state.user.user?.userPair_role?.roleId);
     console.log("current user role: "+ role);
     const id = useSelector((state: RootState) => state.user.user?.userId!);
     const [amount, setAmount] = useState<number>(0);

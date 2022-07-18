@@ -20,7 +20,7 @@ export const ManagerHomePage: React.FC = () => {
     return(
         <div className="manager-homepage">
             <Navbar/>
-            <h1>Manager Homepage</h1>
+            <h1> {managerInfo.user?.username}'s Homepage</h1>
             <ManagerHomePageForm/>
         </div>
     )

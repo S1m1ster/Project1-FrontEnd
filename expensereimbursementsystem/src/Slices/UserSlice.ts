@@ -39,8 +39,7 @@ export const loginUser = createAsyncThunk(
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,
                 email: res.data.email,
-                role: res.data.userPair_role.roleId,
-                roleType: res.data.userPair_role.roleType,
+                userPair_role: res.data.userPair_role,
             }
         }
         catch (e) {
@@ -78,6 +77,20 @@ export const updateUser = createAsyncThunk(
     }
     
    }
+);
+
+export const getEmployees = createAsyncThunk(
+    'getEmployees',
+    async (thunkAPI) => {
+        try {
+            const res = await axios.get('http://localhost:8000/viewEmployees');
+            console.log(res.data);
+            return res.data;
+        }
+        catch (e) {
+            return console.log("Failed to get users");
+        }
+    }
 );
 
 
@@ -144,6 +157,22 @@ export const UserSlice = createSlice({
             console.log("we logged out");
             state.user = undefined;
             state.isLoggedIn = false;
+        });
+
+        checkState.addCase(getEmployees.pending, (state, action) => {
+            state.loading = true;
+        });
+
+        checkState.addCase(getEmployees.fulfilled, (state, action) => {
+            state.users = action.payload;
+            state.error = false;
+            state.loading = false;
+            state.isLoggedIn = true;
+        });
+
+        checkState.addCase(getEmployees.rejected, (state, action) => {
+            state.error = true;
+            state.loading = false;
         });
     }
 })

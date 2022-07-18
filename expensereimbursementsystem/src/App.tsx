@@ -8,6 +8,12 @@ import { ViewAccountPage } from './Views/ViewAccountPage/ViewAccountPage';
 import { UpdateAccountPage} from './Views/UpdateAccountPage/UpdateAccountPage';
 import { ViewPendingReimbursementPage } from './Views/ViewReimbursementPage/ViewPendingReimbursementPage'
 import { ViewResolvedReimbursementPage } from './Views/ViewReimbursementPage/ViewResolvedReimbursementPage';
+import { ViewAllPendingPage } from './Views/ViewAllReimbursementPage/ViewAllPending';
+import { ViewAllResolvedPage } from './Views/ViewAllReimbursementPage/ViewAllResolved';
+import { ViewEmployeesPage } from './Views/ViewEmployees/ViewEmployeesPage';
+import { SearchEmployeeReimbursementPage } from './Views/SearchEmployeeReimbursementPage/SearchEmployeeReimbursementPage';
+import { ViewEmployeeReimbursementPage } from './Views/ViewEmployeeReimbursementPage/ViewEmployeeReimbursementPage';
+
 function App() {
   return (
     <HashRouter>
@@ -18,9 +24,14 @@ function App() {
           <Route path="/employeehomepage" element={<EmployeeHomePage />} />
           <Route path="/createTicket" element={<CreateReimbursementPage />} />
           <Route path="/viewAccount" element={<ViewAccountPage/>}/>
-          <Route path="/updateAccount" element={<UpdateAccountPage/>}/>ViewResolvedReimbursementPage
+          <Route path="/updateAccount" element={<UpdateAccountPage/>}/>
           <Route path="/viewPending" element={<ViewPendingReimbursementPage/>}/>
           <Route path="/viewResolved" element={<ViewResolvedReimbursementPage/>}/>
+          <Route path="/viewAllPending" element={<ViewAllPendingPage/>}/>
+          <Route path="/viewAllResolved" element={<ViewAllResolvedPage/>}/>
+          <Route path="/viewAllEmployees" element={<ViewEmployeesPage/>}/>
+          <Route path="/searchAllByEmployee" element={<SearchEmployeeReimbursementPage/>}/>
+          <Route path="/viewAllByEmployee" element={<ViewEmployeeReimbursementPage/>}/>
       </Routes>
     </HashRouter>
   );

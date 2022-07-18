@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export const UpdateAccountForm: React.FC = () => {
 
     const id = useSelector((state: RootState) => state.user.user?.userId!);
-    const role = useSelector((state: RootState) => state.user.user?.role!);
+    const role = useSelector((state: RootState) => state.user.user?.userPair_role?.roleId);
     
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");

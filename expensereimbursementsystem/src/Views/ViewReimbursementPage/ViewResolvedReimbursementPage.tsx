@@ -4,7 +4,7 @@ import { AppDispatch, RootState } from '../../Store';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { useEffect } from "react";
-import { viewEmployeeReimbursements } from "../../Slices/ReimbursementSlice";
+import { viewReimbursements } from "../../Slices/ReimbursementSlice";
 
 
 export const ViewResolvedReimbursementPage: React.FC = () => {
@@ -21,7 +21,7 @@ export const ViewResolvedReimbursementPage: React.FC = () => {
             navigateTo('/login');
         }
         else{
-            dispatch(viewEmployeeReimbursements(info));
+            dispatch(viewReimbursements(info));
         }
         
     }, [employeeInfo.isLoggedIn]);
@@ -34,7 +34,7 @@ export const ViewResolvedReimbursementPage: React.FC = () => {
             <div className="pending-container">
               {resolvedTickets?.map((ticket) => {
                 return (
-                  <div className="ticket-container">
+                  <div className="ticket-container" key={ticket.reimbursementId}>
                     <div className="ticket-info">
                       <label>Reimbursement Id: {ticket.reimbursementId}</label>
                     </div>
