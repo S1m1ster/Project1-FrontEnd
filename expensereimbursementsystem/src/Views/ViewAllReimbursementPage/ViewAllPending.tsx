@@ -7,32 +7,31 @@ import { useEffect } from "react";
 import { viewReimbursements } from "../../Slices/ReimbursementSlice";
 
 
-export const ViewPendingReimbursementPage: React.FC = () => {
-    const employeeInfo = useSelector((state: RootState) => state.user);
-    const pendingTickets = useSelector((state: RootState) => state.reimbursement.tickets);
+export const ViewAllPendingPage: React.FC = () => {
+    const managerInfo = useSelector((state: RootState) => state.user);
+    const allPendingTickets = useSelector((state: RootState) => state.reimbursement.tickets);
     const navigateTo = useNavigate();
     const dispatch: AppDispatch = useDispatch();
-    const id = employeeInfo.user?.userId!;
     const type = 1;
-    const info = {id, type};
+    const info = {type};
     
     useEffect(() => {
-        if(!employeeInfo.isLoggedIn){
+        if(!managerInfo.isLoggedIn){
             navigateTo('/login');
         }
         else{
             dispatch(viewReimbursements(info));
         }
         
-    }, [employeeInfo.isLoggedIn]);
+    }, [managerInfo.isLoggedIn]);
 
     return(
         <div className="viewPending-page">
             <Navbar/>
-            <h1>{employeeInfo.user?.username}'s' Pending Reimbursements </h1>
+            <h1>All Pending Reimbursements </h1>
 
             <div className="pending-container">
-              {pendingTickets?.map((ticket) => {
+              {allPendingTickets?.map((ticket) => {
                 return (
                   <div className="ticket-container" key={ticket.reimbursementId}>
                     <div className="ticket-info">

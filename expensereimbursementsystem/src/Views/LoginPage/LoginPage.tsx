@@ -11,7 +11,7 @@ export const LoginPage: React.FC = () => {
   
     useEffect(() => {
       if (currentUserState.isLoggedIn !== false) {
-        if(currentUserState.user?.role === 2){
+        if(currentUserState.user?.userPair_role?.roleId === 2){
           console.log("we logged in manager");
           navigateTo('/managerhomepage')
         }
@@ -23,7 +23,7 @@ export const LoginPage: React.FC = () => {
       else{
         console.log("credentials failed");
       }
-    }, [currentUserState.isLoggedIn, currentUserState.user?.role, navigateTo]);
+    }, [currentUserState.isLoggedIn, currentUserState.user?.userPair_role?.roleId, navigateTo]);
   
   
     return (

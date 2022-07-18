@@ -1,40 +1,25 @@
-import React from "react";
-import { useSelector,  useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '../../Store';
-import { useNavigate } from 'react-router-dom';
-import { Navbar } from "../../Components/Navbar/Navbar";
-import { useEffect } from "react";
-import { viewReimbursements } from "../../Slices/ReimbursementSlice";
+import React, {useEffect, useState} from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../Store';
 
+import { viewReimbursementsOfEmployee } from '../../Slices/ReimbursementSlice';
+import { Navbar } from '../../Components/Navbar/Navbar';
 
-export const ViewPendingReimbursementPage: React.FC = () => {
-    const employeeInfo = useSelector((state: RootState) => state.user);
-    const pendingTickets = useSelector((state: RootState) => state.reimbursement.tickets);
-    const navigateTo = useNavigate();
-    const dispatch: AppDispatch = useDispatch();
-    const id = employeeInfo.user?.userId!;
-    const type = 1;
-    const info = {id, type};
+export const ViewEmployeeReimbursementPage: React.FC = () => {
+    const managerInfo = useSelector((state: RootState) => state.user);
+    const employeeReimbursements = useSelector((state: RootState) => state.reimbursement.tickets);
     
     useEffect(() => {
-        if(!employeeInfo.isLoggedIn){
-            navigateTo('/login');
-        }
-        else{
-            dispatch(viewReimbursements(info));
-        }
-        
-    }, [employeeInfo.isLoggedIn]);
 
-    return(
-        <div className="viewPending-page">
+    },[viewReimbursementsOfEmployee])
+    
+    return (
+        <div className='view-employee-ticket-form'>
             <Navbar/>
-            <h1>{employeeInfo.user?.username}'s' Pending Reimbursements </h1>
-
-            <div className="pending-container">
-              {pendingTickets?.map((ticket) => {
+            <div className="employees-container">
+              {employeeReimbursements?.map((ticket) => {
                 return (
-                  <div className="ticket-container" key={ticket.reimbursementId}>
+                  <div className="ticket-container"  key={ticket.reimbursementId}>
                     <div className="ticket-info">
                       <label>Reimbursement Id: {ticket.reimbursementId}</label>
                     </div>
@@ -71,7 +56,8 @@ export const ViewPendingReimbursementPage: React.FC = () => {
                 )
               })}
             </div>
+            
+            
         </div>
-        
     )
 }

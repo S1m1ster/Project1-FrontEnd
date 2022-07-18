@@ -1,4 +1,5 @@
 import { IReimbrusement } from "./IReimbursement";
+import { IUserRole } from "./IUserRole";
 
 export interface IUser{
     userId?: number,
@@ -7,6 +8,5 @@ export interface IUser{
     firstName: string,
     lastName: string,
     email: string,
-    role?: number,
-    roleType?: string
+    userPair_role?: IUserRole
 }

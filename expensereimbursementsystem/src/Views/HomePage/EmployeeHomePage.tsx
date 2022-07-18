@@ -19,7 +19,7 @@ export const EmployeeHomePage: React.FC = () => {
     return(
         <div className="employee-homepage">
             <Navbar/>
-            <h1>{useSelector((state: RootState) => state.user.user?.username)} Homepage</h1>
+            <h1>{employeeInfo.user?.username}'s Homepage</h1>
             <EmployeeHomePageForm/>
             
         </div>
