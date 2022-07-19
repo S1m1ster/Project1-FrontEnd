@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../Store';
 import { loginUser } from '../../Slices/UserSlice';
+import './LoginForm.css';
 
 export const LoginForm: React.FC = () => {
     const [email, setEmail] = useState<string>("");
@@ -28,8 +29,8 @@ export const LoginForm: React.FC = () => {
                 <h1 id='header'>Login to Expense Reimbursement System</h1>
             </div>
 
-            <form className='form'>
-                <div className='userInput-container'>
+            <form className='login-input-form'>
+                <div className='login-container'>
                     <label id='login-input-label'>Please Enter Email:</label>
                     <input id='login-input' type="text" placeholder='jSmith@mail.com' name="email" onChange={handleUserInput}></input>
 

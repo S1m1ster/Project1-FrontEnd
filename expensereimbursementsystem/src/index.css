@@ -1,1 +1,8 @@
-
+:root {
+    --background-page: #C0D6DF;
+    --background-form: #DBE9EE;
+    --background-container: #799baa;
+    --text-color: #166088;
+    --button-color: #4A6FA5;
+    --nav-bar: #166088;
+  }
