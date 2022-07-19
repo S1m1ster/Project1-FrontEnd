@@ -16,6 +16,10 @@ export const ManagerHomePageForm: React.FC = () => {
         navigateTo('/viewAllEmployees');
     }
 
+    const handlegoToFindTicket = (event:React.MouseEvent<HTMLButtonElement>) => {
+        navigateTo('/findTicektPage');
+    }
+
     const handlegoToViewAllPendingReimbursement = (event:React.MouseEvent<HTMLButtonElement>) => {
         navigateTo('/viewAllPending');
     }
@@ -44,7 +48,7 @@ export const ManagerHomePageForm: React.FC = () => {
                     </li>
 
                     <li>
-                        <button className="manager-btn">Approve/Deny Reimbursements</button>
+                        <button className="manager-btn" onClick={handlegoToFindTicket}>Approve/Deny Reimbursements</button>
                     </li>
 
                     <li>
