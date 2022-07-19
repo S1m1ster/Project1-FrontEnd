@@ -13,6 +13,8 @@ import { ViewAllResolvedPage } from './Views/ViewAllReimbursementPage/ViewAllRes
 import { ViewEmployeesPage } from './Views/ViewEmployees/ViewEmployeesPage';
 import { SearchEmployeeReimbursementPage } from './Views/SearchEmployeeReimbursementPage/SearchEmployeeReimbursementPage';
 import { ViewEmployeeReimbursementPage } from './Views/ViewEmployeeReimbursementPage/ViewEmployeeReimbursementPage';
+import { FindTicketPage } from './Views/FindTicketPage/FindTicketPage';
+import { ApproveDenyTicketPage } from './Views/ApproveDenyTicketPage/AprroveDenyTicketPage';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/viewAllEmployees" element={<ViewEmployeesPage/>}/>
           <Route path="/searchAllByEmployee" element={<SearchEmployeeReimbursementPage/>}/>
           <Route path="/viewAllByEmployee" element={<ViewEmployeeReimbursementPage/>}/>
+          <Route path="/findTicektPage" element={<FindTicketPage/>}/>
+          <Route path="/approveDenyTicketPage" element={<ApproveDenyTicketPage/>}/>
       </Routes>
     </HashRouter>
   );

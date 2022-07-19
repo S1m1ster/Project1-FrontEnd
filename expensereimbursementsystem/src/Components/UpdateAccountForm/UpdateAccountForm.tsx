@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../Store';
 import { updateUser } from '../../Slices/UserSlice';
@@ -6,9 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 export const UpdateAccountForm: React.FC = () => {
 
-    const id = useSelector((state: RootState) => state.user.user?.userId!);
-    const role = useSelector((state: RootState) => state.user.user?.userPair_role?.roleId);
-    
+    const user = useSelector((state: RootState) => state.user.user);
+    const role = user?.userPair_role?.roleId;
+    const id = user?.userId;
+
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [firstName, setFirstName] = useState<string>("");
@@ -16,6 +17,8 @@ export const UpdateAccountForm: React.FC = () => {
     const [email, setEmail] = useState<string>("");
     const dispatch: AppDispatch = useDispatch();
     const navigateTo = useNavigate();
+
+    
 
 
     const handleUserInput = (event:React.ChangeEvent<HTMLInputElement>) => {
@@ -39,11 +42,13 @@ export const UpdateAccountForm: React.FC = () => {
     const handleUpdateAccount = (event:React.MouseEvent<HTMLButtonElement>) => {
         let credentials = {id, username, password, firstName, lastName, email};
         dispatch(updateUser(credentials));
-    
+        
         if(role === 2){
             navigateTo('/managerhomepage');
         }
-        navigateTo('/employeehomepage');
+        else{
+            navigateTo('/employeehomepage');
+        }
         
     }
     return (

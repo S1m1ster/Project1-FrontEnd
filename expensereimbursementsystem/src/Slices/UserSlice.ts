@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk(
         try {
             const res = await axios.post('http://localhost:8000/login', credentials);
             userData = res.data;
-            console.log(res.data);
+            console.log("User has logged in: ",res.data);
             return {
                 userId: res.data.userId,
                 username: res.data.username,
@@ -62,14 +62,8 @@ export const updateUser = createAsyncThunk(
    async (credentials: UpdateAccount, thunkAPI) => {
     try{
         const res = await axios.patch('http://localhost:8000/updateAccount', credentials);
-        return{
-            userId: res.data.userId,
-            username: res.data.username,
-            password: res.data.password,
-            firstName: res.data.firstName,
-            lastName: res.data.lastName,
-            email: res.data.email
-        };
+        console.log("User has updated account: ",res.data);
+        return res.data;
     }
     catch(e){
         console.log(e);
@@ -84,7 +78,7 @@ export const getEmployees = createAsyncThunk(
     async (thunkAPI) => {
         try {
             const res = await axios.get('http://localhost:8000/viewEmployees');
-            console.log(res.data);
+            console.log("manager view all employees: ",res.data);
             return res.data;
         }
         catch (e) {
@@ -99,7 +93,7 @@ export const logout = createAsyncThunk(
     "/logout",
    async (thunkAPI) => {
     try{
-        
+        console.log("User has logged out");
     } catch(e){
         console.log(e);
     }
@@ -131,7 +125,6 @@ export const UserSlice = createSlice({
         });
 
         checkState.addCase(loginUser.rejected, (state, action) => {
-            console.log("we lost the state");
             state.error = true;
             state.loading = false;
         });
@@ -148,13 +141,11 @@ export const UserSlice = createSlice({
         });
 
         checkState.addCase(updateUser.rejected, (state, action) => {
-            console.log("we lost the state");
             state.error = true;
             state.loading = false;
         });
 
         checkState.addCase(logout.fulfilled, (state, action) => {
-            console.log("we logged out");
             state.user = undefined;
             state.isLoggedIn = false;
         });
