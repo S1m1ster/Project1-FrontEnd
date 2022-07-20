@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { EmployeeHomePageForm } from "../../Components/HomePageForms/EmployeeHomePageForm";
 import { useEffect } from "react";
+import './HomePage.css';
 
 export const EmployeeHomePage: React.FC = () => {
     const employeeInfo = useSelector((state: RootState) => state.user);
@@ -17,9 +18,9 @@ export const EmployeeHomePage: React.FC = () => {
     }, [employeeInfo.isLoggedIn]);
 
     return(
-        <div className="employee-homepage">
+        <div className="homepage-employee">
             <Navbar/>
-            <h1>{employeeInfo.user?.username}'s Homepage</h1>
+            <h1 className="homepage-title">{employeeInfo.user?.username}'s Homepage</h1>
             <EmployeeHomePageForm/>
             
         </div>

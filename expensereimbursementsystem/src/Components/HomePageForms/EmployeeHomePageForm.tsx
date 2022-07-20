@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './HomePageForm.css';
 
 export const EmployeeHomePageForm: React.FC = () => {
     const navigateTo = useNavigate();
@@ -28,26 +29,26 @@ export const EmployeeHomePageForm: React.FC = () => {
     }
 
     return(
-        <div className="employee-container">
-                <ul className="employee-btns">
+        <div className="homeform-container">
+                <ul className="homeform-btns">
                     <li>
-                        <button className="employee-btn" onClick={handlegoToViewAccount}>View Account</button>
+                        <button className="homeform-btn" onClick={handlegoToViewAccount}>View Account</button>
                     </li>
                     
                     <li>
-                        <button className="employee-btn" onClick={handlegoToUpdateAccount}>Edit Account</button>
+                        <button className="homeform-btn" onClick={handlegoToUpdateAccount}>Edit Account</button>
                     </li>
 
                     <li>
-                        <button className="employee-btn" onClick={handlegoToCreateTicket}>Create Reimbursement Ticket</button>
+                        <button className="homeform-btn" onClick={handlegoToCreateTicket}>Create Reimbursement Ticket</button>
                     </li>
 
                     <li>
-                        <button className="employee-btn" onClick={handlegoToPending}>View my Pending Reimbursement</button>
+                        <button className="homeform-btn" onClick={handlegoToPending}>View my Pending Reimbursement</button>
                     </li>
 
                     <li>
-                        <button className="employee-btn" onClick={handlegoToResolved}>View my Resolved Reimbursement</button>
+                        <button className="homeform-btn" onClick={handlegoToResolved}>View my Resolved Reimbursement</button>
                     </li>
                 </ul>
      </div>

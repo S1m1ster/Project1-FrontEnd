@@ -1,0 +1,41 @@
+.navbar{
+    background-color: var(--nav-bar);
+    height: 80px;
+    margin-top: -8px;
+    width: 100vw;
+    margin-left: -10px;
+}
+
+.nav-container{
+    padding: 14px 14px;
+}
+
+.nav-link-home{
+    background-color: var(--button-color);
+    border-radius: 10px;
+    color: var(--button-text-color);
+    text-decoration: none;
+    font-size: 3.2em;
+    margin-left: 20px;
+}
+
+.nav-link-home:hover{
+    background-color: rgb(100, 216, 236);
+}
+
+.logout-container{
+    float: right;
+}
+
+.logout-btn{
+    background-color: var(--button-color);
+    border-radius: 10px;
+    color: var(--button-text-color);
+    border:none;
+    font-size: 3.1em;
+    margin-right: 40px;
+}
+
+.logout-btn:hover{
+    background-color: rgb(100, 216, 236);
+}

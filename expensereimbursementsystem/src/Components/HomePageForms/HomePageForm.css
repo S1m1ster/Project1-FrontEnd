@@ -1,0 +1,28 @@
+.homeform-container{
+    background-color: var(--background-container);
+    width:800px;
+    margin: auto;
+}
+.homeform-btns{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    
+}
+.homeform-btn{
+    background-color: var(--button-color);
+    font-size: 2.3em;
+    border-radius: 10px;
+    height: 100px;
+    width: 700px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-right: 25px;
+    color: var(--button-text-color);
+}
+
+.homeform-btn:hover{
+    background-color: rgb(100, 216, 236);
+}

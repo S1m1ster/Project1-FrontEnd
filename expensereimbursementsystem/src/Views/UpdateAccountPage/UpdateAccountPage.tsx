@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { UpdateAccountForm } from "../../Components/UpdateAccountForm/UpdateAccountForm";
 import { useEffect } from "react";
+import "./UpdateAccountPage.css"
 
 export const UpdateAccountPage: React.FC = () => {
     const employeeInfo = useSelector((state: RootState) => state.user);
@@ -17,11 +18,10 @@ export const UpdateAccountPage: React.FC = () => {
     }, [employeeInfo.isLoggedIn]);
 
     return(
-        <div className="employee-homepage">
+        <div className="update-account-page">
             <Navbar/>
-            <h1>Update Account</h1>
+            <h1 className="update-title">Update Account</h1>
             <UpdateAccountForm/>
-            
         </div>
     )
 }

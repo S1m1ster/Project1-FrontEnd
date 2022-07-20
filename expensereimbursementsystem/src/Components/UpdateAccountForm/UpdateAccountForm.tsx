@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../Store';
 import { updateUser } from '../../Slices/UserSlice';
 import { useNavigate } from 'react-router-dom';
+import "./UpdateAccountForm.css"
 
 export const UpdateAccountForm: React.FC = () => {
 
@@ -54,31 +55,31 @@ export const UpdateAccountForm: React.FC = () => {
     return (
         <div className='update-account-form'>
             
-            <form update-account-form className='update-account-form-container'>
-                <ul className='input-container'>
-                    <li>
-                        <label className='login-input-label'>Enter Username:</label>
-                        <input className='login-input' type="text" name = "username" placeholder={useSelector((state: RootState) => state.user.user?.username!)} onChange={handleUserInput}></input>
+            <form className='update-account-form-container'>
+                <ul className='update-container'>
+                    <li className='update-li'>
+                        <label className='update-input-label'>Enter Username:</label>
+                        <input className='update-input' type="text" name = "username" placeholder={useSelector((state: RootState) => state.user.user?.username!)} onChange={handleUserInput}></input>
                     </li>
 
-                    <li>
-                        <label className='login-input-label'>Enter Password:</label>
-                        <input className='login-input' type="text" name = "password" placeholder={useSelector((state: RootState) => state.user.user?.password!)} onChange={handleUserInput}></input>
+                    <li className='update-li'>
+                        <label className='update-input-label'>Enter Password:</label>
+                        <input className='update-input' type="text" name = "password" placeholder={useSelector((state: RootState) => state.user.user?.password!)} onChange={handleUserInput}></input>
                     </li>
 
-                    <li>
-                        <label className='login-input-label'>Enter First Name:</label>
-                        <input className='login-input' type="text" name = "firstName" placeholder={useSelector((state: RootState) => state.user.user?.firstName)} onChange={handleUserInput}></input>
+                    <li className='update-li'>
+                        <label className='update-input-label'>Enter First Name:</label>
+                        <input className='update-input' type="text" name = "firstName" placeholder={useSelector((state: RootState) => state.user.user?.firstName)} onChange={handleUserInput}></input>
                     </li>
 
-                    <li>
-                        <label className='login-input-label'>Enter Last Name:</label>
-                        <input className='login-input' type="text" name = "lastName" placeholder={useSelector((state: RootState) => state.user.user?.lastName!)} onChange={handleUserInput}></input>
+                    <li className='update-li'>
+                        <label className='update-input-label'>Enter Last Name:</label>
+                        <input className='update-input' type="text" name = "lastName" placeholder={useSelector((state: RootState) => state.user.user?.lastName!)} onChange={handleUserInput}></input>
                     </li>
 
-                    <li>
-                        <label className='login-input-label'>Enter E-Mail:</label>
-                        <input className='login-input' type="text" name = "email" placeholder={useSelector((state: RootState) => state.user.user?.email!)} onChange={handleUserInput}></input>
+                    <li className='update-li'>
+                        <label className='update-input-label'>Enter E-Mail:</label>
+                        <input className='update-input' type="text" name = "email" placeholder={useSelector((state: RootState) => state.user.user?.email!)} onChange={handleUserInput}></input>
                     </li>
                 </ul>
                 <div className='update-account-button-container'>

@@ -1,0 +1,62 @@
+.update-container{
+    display: flex;;
+    flex-direction: column;
+    background-color: var(--background-form);
+    text-align: center;
+    width: fit-content;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.update-li{
+    list-style: none;
+    text-align: left;
+}
+
+.update-input-label{
+    font-size: 3.2em;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: var(--text-color);
+}
+.update-input{
+    font-size: 2.5em;
+    width: 500px;
+    float: right;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    border-color: black;
+    background-color: rgb(193, 206, 214);
+}
+
+.update-input::placeholder{
+    color: var(--text-color);
+}
+
+.update-input:focus{
+    border-color: rgb(100, 216, 236);
+    border-width: 4px;
+    outline: none;
+}
+
+.update-account-button-container{
+    text-align: center;
+}
+
+.update-account-btn{
+    background-color: var(--button-color);
+    width: 530px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.7em;
+    color: var(--button-text-color);
+}
+
+.update-account-btn:hover{
+    background-color: rgb(100, 216, 236);
+}
