@@ -31,13 +31,14 @@
 
 #login-input{
     color: var(--text-color);
-    font-size: 2.2em;
+    font-size: 2.4em;
     border-color: black;
     border-width: 3px;
     width: 65%;
     height: 100px;
     margin-bottom: -15px;
-    margin-top: -20px
+    margin-top: -20px;
+    background-color: rgb(193, 206, 214);
 }
 
 #login-input::placeholder{
@@ -56,6 +57,7 @@
     height: 50px;
     border-radius: 10px;
     font-size: 1.7em;
+    color: var(--button-text-color);
 }
 
 #login-button:hover{

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { useEffect } from "react";
 import { ManagerHomePageForm } from "../../Components/HomePageForms/ManagerHomePageForm";
+import './HomePage.css';
 
 export const ManagerHomePage: React.FC = () => {
     const managerInfo = useSelector((state: RootState) => state.user);
@@ -18,9 +19,9 @@ export const ManagerHomePage: React.FC = () => {
     }, [managerInfo.isLoggedIn]);
 
     return(
-        <div className="manager-homepage">
+        <div className="homepage-manager">
             <Navbar/>
-            <h1> {managerInfo.user?.username}'s Homepage</h1>
+            <h1 className="homepage-title"> {managerInfo.user?.username}'s Homepage</h1>
             <ManagerHomePageForm/>
         </div>
     )

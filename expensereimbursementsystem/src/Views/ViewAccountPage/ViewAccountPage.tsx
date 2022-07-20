@@ -4,6 +4,7 @@ import { RootState } from '../../Store';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { useEffect } from "react";
+import "./ViewAccountPage.css";
 
 export const ViewAccountPage: React.FC = () => {
     const employeeInfo = useSelector((state: RootState) => state.user);
@@ -17,14 +18,17 @@ export const ViewAccountPage: React.FC = () => {
     }, [employeeInfo.isLoggedIn]);
 
     return(
-        <div className="employee-homepage">
+        <div className="view-account-page">
             <Navbar/>
-            <h1>My Profile</h1>
-            <div className="user-info-container">
-                <label className="user-firstname">First Name: {employeeInfo.user?.firstName}</label>
-                <label className="user-lastname">Last Name: {employeeInfo.user?.lastName}</label>
-                <label className="user-username">Username: {employeeInfo.user?.username}</label>
-                <label className="user-email">Email: {employeeInfo.user?.email}</label>
+            <h1 className="view-title">My Account</h1>
+            <div className="view-info-container">
+                <label className="view-info">Employee Id: {employeeInfo.user?.userId}</label>
+                <label className="view-info">Role: {employeeInfo.user?.userPair_role?.roleType}</label>
+                <label className="view-info">First Name: {employeeInfo.user?.firstName}</label>
+                <label className="view-info">Last Name: {employeeInfo.user?.lastName}</label>
+                <label className="view-info">Username: {employeeInfo.user?.username}</label>
+                <label className="view-info">Email: {employeeInfo.user?.email}</label>
+                <label className="view-info">Password: {employeeInfo.user?.password}</label>
             </div>
             
         </div>

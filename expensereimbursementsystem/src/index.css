@@ -5,4 +5,8 @@
     --text-color: #166088;
     --button-color: #4A6FA5;
     --nav-bar: #166088;
+    --button-text-color: #0d476e;
+  }
+  html{
+    background-color: var(--background-page);
   }
