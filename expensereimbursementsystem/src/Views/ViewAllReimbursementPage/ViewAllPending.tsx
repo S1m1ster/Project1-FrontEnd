@@ -28,14 +28,14 @@ export const ViewAllPendingPage: React.FC = () => {
     return(
         <div className="viewPending-page">
             <Navbar/>
-            <h1>All Pending Reimbursements </h1>
+            <h1 id="ticket-title">All Pending Reimbursements </h1>
 
             <div className="pending-container">
               {allPendingTickets?.map((ticket) => {
                 return (
                   <div className="ticket-container" key={ticket.reimbursementId}>
                     <div className="ticket-info">
-                      <label>Reimbursement Id: {ticket.reimbursementId}</label>
+                      <label >Reimbursement Id: {ticket.reimbursementId}</label>
                     </div>
 
                     <div className="ticket-info">

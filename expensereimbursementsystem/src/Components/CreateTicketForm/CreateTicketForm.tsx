@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../Store';
 import { createTicket } from '../../Slices/ReimbursementSlice';
 import { useNavigate } from 'react-router-dom';
+import "./CreateTicketForm.css";
 
 export const CreateReimbursementForm: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -51,24 +52,20 @@ export const CreateReimbursementForm: React.FC = () => {
 
     return(
         <div className='create-ticket'>
-            <div className='header-container'>
-                <h1 id='create-ticket-header'>Create a reimbursement ticket</h1>
-            </div>
-
             <form className='create-ticket-form'>
-                <div className='amount-container'>
-                    <label className='input-field-label'>Please Enter amount</label>
-                    <input className='input-field' type = "number" name = "amount" onChange={handleReimbursement}/>
+                <div className='create-ticket-input-container'>
+                    <label className='create-ticket-input-field-label'>Please Enter amount</label>
+                    <input className='create-ticket-input-field' type = "number" name = "amount" placeholder='0' onChange={handleReimbursement}/>
                 </div>
 
-                <div className='amount-container'>
-                    <label className='input-field-label'>Please Enter Description</label>
-                    <input className='input-field' type = "text" name = "description" onChange={handleReimbursement}/>
+                <div className='create-ticket-input-container'>
+                    <label className='create-ticket-input-field-label'>Please Enter Description</label>
+                    <input className='create-ticket-input-field' type = "text" name = "description" placeholder='Description here' onChange={handleReimbursement}/>
                 </div>
 
-                <div className='amount-container'>
-                    <label className='input-field-label'>Choose the type</label>
-                    <select className='select-field' name='type' onChange={handleReimbursementSelect}>
+                <div className='create-ticket-input-container'>
+                    <label className='create-ticket-input-field-label'>Choose the type</label>
+                    <select className='create-ticket-select-field' name='type' onChange={handleReimbursementSelect}>
                         <option value="">Select an option</option>
                         <option value="Lodging">Lodging</option>
                         <option value="Travel">Travel</option>
@@ -76,7 +73,7 @@ export const CreateReimbursementForm: React.FC = () => {
                         <option value="Other">Other</option>
                     </select>
                 </div>
-                <div className='button-container'>
+                <div className='create-ticket-form-button-container'>
                     <button className='create-ticket-form-btn' onClick={handleaddTicket}>Create Reimbursement Ticket</button>
                 </div>
             </form>

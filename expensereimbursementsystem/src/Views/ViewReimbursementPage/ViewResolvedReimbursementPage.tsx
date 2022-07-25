@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { useEffect } from "react";
 import { viewReimbursements } from "../../Slices/ReimbursementSlice";
-
+import './ViewReimbursements.css';
 
 export const ViewResolvedReimbursementPage: React.FC = () => {
     const employeeInfo = useSelector((state: RootState) => state.user);
@@ -27,11 +27,11 @@ export const ViewResolvedReimbursementPage: React.FC = () => {
     }, [employeeInfo.isLoggedIn]);
 
     return(
-        <div className="viewPending-page">
+        <div className="view-ticket-page">
             <Navbar/>
-            <h1>{employeeInfo.user?.username}'s' Resolved Reimbursements </h1>
+            <h1 id="ticket-title">{employeeInfo.user?.username}'s' Resolved Reimbursements </h1>
 
-            <div className="pending-container">
+            <div className="view-ticket-container">
               {resolvedTickets?.map((ticket) => {
                 return (
                   <div className="ticket-container" key={ticket.reimbursementId}>
@@ -56,11 +56,11 @@ export const ViewResolvedReimbursementPage: React.FC = () => {
                     </div>
 
                     <div className="ticket-info">
-                      <label>Manager: {ticket.userResolver_ticket?.firstName}</label>
+                      <label>Status: {ticket.reimbursement_status?.status}</label>
                     </div>
 
                     <div className="ticket-info">
-                      <label>Status: {ticket.reimbursement_status?.status}</label>
+                      <label>Manager: {ticket.userResolver_ticket?.firstName}</label>
                     </div>
 
                     <div className="ticket-info">
