@@ -36,13 +36,11 @@ export const LoginForm: React.FC = () => {
 
                     <label id='login-input-label'>Please Enter Password:</label>
                     <input id='login-input' type="password" placeholder='********' name="password" onChange={handleUserInput}></input>
-                </div>
-
-
+                </div>                
             </form>
 
             <div className='button-container'>
-                <button id='login-button' onClick={handleLogin}>Login</button>
+                    <button id='login-button' onClick={handleLogin}>Login</button>
             </div>
         </div>
     )

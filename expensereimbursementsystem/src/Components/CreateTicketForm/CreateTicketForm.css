@@ -1,0 +1,92 @@
+.create-ticket-form{
+    display: flex;;
+    flex-direction: column;
+    background-color: var(--background-form);
+    text-align: center;
+    width: fit-content;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.create-ticket-input-container{
+    list-style: none;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+}
+
+.create-ticket-input-field-label{
+    font-size: 3.2em;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: var(--text-color);
+}
+.create-ticket-input-field{
+    font-size: 2.5em;
+    width: 500px;
+    float: right;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    border-color: black;
+    background-color: rgb(193, 206, 214);
+}
+
+.create-ticket-input-field::placeholder{
+    color: var(--text-color);
+}
+
+.create-ticket-input-field:first-of-type{
+    color: var(--text-color);
+}
+
+.create-ticket-input-field:focus{
+    border-color: rgb(100, 216, 236);
+    border-width: 4px;
+    outline: none;
+}
+
+
+.create-ticket-select-field{
+    font-size: 2.5em;
+    width: 508px;
+    float: right;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    border-color: black;
+    background-color: rgb(193, 206, 214);
+}
+
+.create-ticket-select-field:first-of-type{
+    color: var(--text-color);
+}
+
+.create-ticket-select-field:focus{
+    border-color: rgb(100, 216, 236);
+    border-width: 4px;
+    outline: none;
+}
+
+.create-ticket-form-btn{
+    background-color: var(--button-color);
+    width: 530px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.7em;
+    color: var(--button-text-color);
+}
+
+.create-ticket-form-button-container{
+    padding-top: 30px;
+}
+
+.create-ticket-form-btn:hover{
+    background-color: rgb(100, 216, 236);
+}

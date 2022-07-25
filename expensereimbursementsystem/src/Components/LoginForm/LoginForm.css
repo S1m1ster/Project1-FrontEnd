@@ -18,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     width: 800px;
-    height: 500px;
+    height: 520px;
 }
 
 #login-input-label{
@@ -51,13 +51,19 @@
     outline: none;
 }
 
+.button-container{
+    text-align: center;
+    margin-top: -70px;
+}
+
 #login-button{
     background-color: var(--button-color);
     width: 530px;
-    height: 50px;
+    height: 60px;
     border-radius: 10px;
     font-size: 1.7em;
     color: var(--button-text-color);
+    font-weight: bolder;
 }
 
 #login-button:hover{

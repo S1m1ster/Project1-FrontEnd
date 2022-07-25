@@ -28,7 +28,7 @@ export const ViewAllResolvedPage: React.FC = () => {
     return(
         <div className="viewResolved-page">
             <Navbar/>
-            <h1>All Resolved Reimbursements </h1>
+            <h1 id="ticket-title">All Resolved Reimbursements </h1>
 
             <div className="Resolved-container">
               {allPendingTickets?.map((ticket) => {
