@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from '../../Store';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { getReimbursementsOfEmployee } from '../../Slices/ReimbursementSlice';
+import "./FindTicketPage.css";
 
 export const FindTicketPage: React.FC = () => {
     const managerInfo = useSelector((state: RootState) => state.user);
@@ -36,10 +37,11 @@ export const FindTicketPage: React.FC = () => {
 
     
     return (
-        <div className='find-approveDeny-page'>
+        <div className='find-employee-ticket-page'>
             <Navbar/>
-            <form className='find-approveDeny-container'>
-                <ul className='find-container'>
+            <h1 className='find-employee-ticket-title'>Reimbursement Finder</h1>
+            <form className='find-employee-ticket-form'>
+                <ul className='find-employee-ticket-container'>
                     <li>
                         <label className='find-employee-ticket-label'>Enter Reimbursement ticket id:</label>
                         <input className='find-employee-ticket-input' type="number" name = "employeeId" onChange={handleUserInput}></input>

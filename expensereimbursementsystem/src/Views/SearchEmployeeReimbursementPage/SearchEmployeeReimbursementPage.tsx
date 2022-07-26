@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from '../../Store';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { viewReimbursementsOfEmployee } from '../../Slices/ReimbursementSlice';
+import "./SearchEmployeeReimbursementPage.css";
 
 export const SearchEmployeeReimbursementPage: React.FC = () => {
     const managerInfo = useSelector((state: RootState) => state.user);
@@ -33,17 +34,18 @@ export const SearchEmployeeReimbursementPage: React.FC = () => {
 
     
     return (
-        <div className='view-employee-ticket-form'>
+        <div className='search-employee-ticket-form'>
             <Navbar/>
-            <form className='view-employee-ticket-form-container'>
-                <ul className='input-container'>
+            <h1 className='search-employee-ticket-title'>Find Employee Reimbursement</h1>
+            <form className='search-employee-ticket-form-container'>
+                <ul className='search-employee-ticket-input-container'>
                     <li>
-                        <label className='view-employee-ticket-label'>Enter Employee Id:</label>
-                        <input className='view-employee-ticket-input' type="number" name = "employeeId" onChange={handleUserInput}></input>
+                        <label className='search-employee-ticket-label'>Enter Employee Id:</label>
+                        <input className='search-employee-ticket-input' type="number" name = "employeeId" onChange={handleUserInput}></input>
                     </li>
                 </ul>
-                <div className='view-employee-ticket-button-container'>
-                    <button className='view-employee-ticket-btn' onClick={handleGetEmployeeTicket}>Search</button>
+                <div className='search-employee-ticket-button-container'>
+                    <button className='search-employee-ticket-btn' onClick={handleGetEmployeeTicket}>Search</button>
                 </div>
                 
             </form>

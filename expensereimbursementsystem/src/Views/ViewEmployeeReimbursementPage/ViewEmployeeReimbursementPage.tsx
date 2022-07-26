@@ -16,6 +16,7 @@ export const ViewEmployeeReimbursementPage: React.FC = () => {
     return (
         <div className='view-employee-ticket-form'>
             <Navbar/>
+            <h1 className='view-employee-ticket-title'>{employeeReimbursements?.at(0)?.userPair.firstName} {employeeReimbursements?.at(0)?.userPair.lastName}'s Reimbursements</h1>
             <div className="employees-container">
               {employeeReimbursements?.map((ticket) => {
                 return (
