@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from '../../Store';
 import { acceptOrDenyRequestReimbursement, viewReimbursementsOfEmployee } from '../../Slices/ReimbursementSlice';
 import { Navbar } from '../../Components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
+import "./ApproveDenyTicketPage.css";
 
 export const ApproveDenyTicketPage: React.FC = () => {
     const managerInfo = useSelector((state: RootState) => state.user);
@@ -36,6 +37,7 @@ export const ApproveDenyTicketPage: React.FC = () => {
     return (
         <div className='view-employee-ticket-form'>
             <Navbar/>
+            <h1 className='view-employee-ticket-title'>{ticketFound?.userPair.firstName} {ticketFound?.userPair.lastName}'s Reimbursement Ticket</h1>
             <div className="employees-container">
             <div className="ticket-container">
                     <div className="ticket-info">

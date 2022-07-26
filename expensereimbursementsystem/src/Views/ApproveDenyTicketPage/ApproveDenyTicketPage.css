@@ -1,0 +1,25 @@
+.view-employee-ticket-title{
+    color: var(--text-color);
+    text-align: center;
+    font-size: 4.2em;
+}
+
+.status-container-buttons{
+    text-align: center;
+    margin-top: -40px;
+}
+
+#approve-btn, #deny-btn{
+    background-color: var(--button-color);
+    width: 180px;
+    height: fit-content;
+    border-radius: 10px;
+    font-size: 2.2em;
+    color: var(--button-text-color);
+    font-weight: bolder;
+    margin-right: 10px;
+}
+
+#approve-btn:hover, #deny-btn:hover{
+    background-color: rgb(100, 216, 236);
+}

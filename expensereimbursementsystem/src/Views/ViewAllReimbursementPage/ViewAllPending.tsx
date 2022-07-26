@@ -55,12 +55,12 @@ export const ViewAllPendingPage: React.FC = () => {
                     </div>
 
                     <div className="ticket-info">
-                      <label>Manager: {ticket.userResolver_ticket?.firstName}</label>
+                      <label>Status: {ticket.reimbursement_status?.status}</label>
                     </div>
 
                     <div className="ticket-info">
-                      <label>Status: {ticket.reimbursement_status?.status}</label>
-                    </div>
+                      <label>Manager: {ticket.userResolver_ticket?.firstName}</label>
+                    </div>                  
 
                     <div className="ticket-info">
                       <label>Resolved Date: {ticket.resolvedDate}</label>
